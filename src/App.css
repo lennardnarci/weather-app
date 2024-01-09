@@ -14,6 +14,7 @@
 }
 
 .location {
+  width: 20vw;
   display: flex;
   align-items: baseline;
   justify-content: center;
@@ -21,11 +22,10 @@
 }
 
 .location-text {
-  width: 240px;
   height: 28px;
   position: relative;
-  top: -2px;
-  margin-left: 10px;
+  top: -3px;
+  margin-left: 5px;
 
   color: #fff;
   font-family: Roboto, sans-serif;
@@ -53,4 +53,11 @@
 
 .search-bar:focus {
   outline: none;
+}
+
+.theme-switcher {
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
 }

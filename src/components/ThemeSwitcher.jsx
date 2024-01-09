@@ -2,7 +2,7 @@ import React from 'react'
 
 const ThemeSwitcher = () => {
   return (
-    <div>ThemeSwitcher</div>
+    <div className='theme-switcher'>ThemeSwitcher</div>
   )
 }
 
