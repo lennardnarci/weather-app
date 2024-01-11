@@ -24,6 +24,9 @@ const SearchBar = ({ onSearchValueChange }) => {
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
       />
+      <button className="search-button">
+        <img src="../../public/icons/arrow.svg" alt="Search Button" />
+      </button>
     </div>
   );
 };

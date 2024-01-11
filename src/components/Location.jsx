@@ -1,12 +1,13 @@
 import React from "react";
-import { ReactComponent as LocationIcon } from "../../public/icons/location.svg";
 
-const Location = () => {
+const Location = ({ searchValue }) => {
   return (
     <div className="location">
-      <LocationIcon />
+      <img src="../../public/icons/location.svg" alt="Location Icon" />
       <h4 className="location-text">
-        <span className="bold">Stockholm</span>, Sweden
+        <span className="bold">
+          {searchValue.charAt(0).toUpperCase() + searchValue.slice(1)}
+        </span>
       </h4>
     </div>
   );

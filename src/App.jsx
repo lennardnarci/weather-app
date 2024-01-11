@@ -12,7 +12,10 @@ function App() {
   return (
     <>
       <div className="container">
-        <NavBar onSearchValueChange={handleSearchValueChange} />
+        <NavBar
+          onSearchValueChange={handleSearchValueChange}
+          searchValue={searchValue}
+        />
         <WeatherResults searchValue={searchValue} />
       </div>
     </>

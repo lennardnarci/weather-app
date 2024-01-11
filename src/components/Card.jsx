@@ -13,6 +13,13 @@ const Card = ({ index, isOpen, title, weatherData, onOpen }) => {
             <h2 className="card-top-text">
               {isOpen ? title : title.slice(0, 3)}
             </h2>
+            <h3 className="card-date">
+              {isOpen
+                ? weatherData.forecast.forecastday[index].date.slice(8, 10) +
+                  "/" +
+                  weatherData.forecast.forecastday[index].date.slice(5, 7)
+                : ""}
+            </h3>
           </div>
           <div className="card-body">
             <img
