@@ -1,22 +1,13 @@
 import React from "react";
+import { locationIcon } from "../../public/icons/location.svg";
 
 const Location = () => {
   return (
     <div className="location">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        className="location-svg"
-      >
-        <path
-          d="M10 1.66669C6.77502 1.66669 4.16669 4.27502 4.16669 7.50002C4.16669 8.95002 4.58335 10.3084 5.34169 11.5334C6.13335 12.8167 7.17502 13.9167 7.97502 15.2C8.36669 15.825 8.65002 16.4084 8.95002 17.0834C9.16669 17.5417 9.34169 18.3334 10 18.3334C10.6584 18.3334 10.8334 17.5417 11.0417 17.0834C11.35 16.4084 11.625 15.825 12.0167 15.2C12.8167 13.925 13.8584 12.825 14.65 11.5334C15.4167 10.3084 15.8334 8.95002 15.8334 7.50002C15.8334 4.27502 13.225 1.66669 10 1.66669ZM10 9.79169C8.85002 9.79169 7.91669 8.85835 7.91669 7.70835C7.91669 6.55835 8.85002 5.62502 10 5.62502C11.15 5.62502 12.0834 6.55835 12.0834 7.70835C12.0834 8.85835 11.15 9.79169 10 9.79169Z"
-          fill="white"
-        />
-      </svg>
-      <h4 className="location-text">Stockholm, Sweden</h4>
+      {locationIcon}
+      <h4 className="location-text">
+        <span className="bold">Stockholm</span>, Sweden
+      </h4>
     </div>
   );
 };

@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import Card from "./Card";
 
 const WeatherResults = () => {
   return (
-    <div>WeatherResults</div>
-  )
-}
+    <div className="weather-results">
+      <Card isOpen="true" />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </div>
+  );
+};
 
-export default WeatherResults
+export default WeatherResults;

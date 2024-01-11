@@ -5,11 +5,11 @@ import ThemeSwitcher from "./ThemeSwitcher";
 
 const NavBar = () => {
   return (
-    <header className="nav-bar">
+    <nav className="nav-bar">
       <Location />
       <SearchBar />
       <ThemeSwitcher />
-    </header>
+    </nav>
   );
 };
 
