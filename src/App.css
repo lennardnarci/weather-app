@@ -99,6 +99,8 @@ body {
   font-family: Roboto;
   font-style: normal;
   line-height: normal;
+
+  transition: width 500ms ease;
 }
 
 .card-top {
@@ -156,11 +158,8 @@ body {
   width: 240px;
 
   color: #000;
-  font-family: Roboto;
   font-size: 20px;
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
 }
 
 .open .card-top {
@@ -170,4 +169,27 @@ body {
 
 .open .card-body {
   background: #bbd7ec;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -20px;
+
+  color: #000;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+
+  height: 0px;
+  opacity: 0;
+  transition: height 500ms ease, opacity 500ms ease;
+}
+
+.open .card-details {
+  height: 48px;
+  opacity: 1;
 }

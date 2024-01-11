@@ -1,8 +1,12 @@
 import React from "react";
 
-const Card = ({ index, isOpen, title, weatherData }) => {
+const Card = ({ index, isOpen, title, weatherData, onOpen }) => {
   return (
-    <div className={`card ${isOpen ? "open" : ""}`} key={index}>
+    <div
+      className={`card ${isOpen ? "open" : ""}`}
+      key={index}
+      onClick={onOpen}
+    >
       {weatherData && (
         <>
           <div className="card-top">
@@ -18,10 +22,21 @@ const Card = ({ index, isOpen, title, weatherData }) => {
             />
             <h1 className="card-temp">
               {Math.round(
-                weatherData.forecast.forecastday[index].day.maxtemp_c
+                weatherData.forecast.forecastday[index].day.avgtemp_c
               )}
               °
             </h1>
+            <h3 className="card-details">
+              Max:{" "}
+              {Math.round(
+                weatherData.forecast.forecastday[index].day.maxtemp_c
+              )}
+              ° Min:{" "}
+              {Math.round(
+                weatherData.forecast.forecastday[index].day.mintemp_c
+              )}
+              °
+            </h3>
           </div>
         </>
       )}
