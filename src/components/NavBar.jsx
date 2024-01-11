@@ -1,13 +1,11 @@
 import React from "react";
-import Location from "./Location";
 import SearchBar from "./SearchBar";
 import ThemeSwitcher from "./ThemeSwitcher";
 
-const NavBar = () => {
+const NavBar = ({ onSearchValueChange }) => {
   return (
     <nav className="nav-bar">
-      <Location />
-      <SearchBar />
+      <SearchBar onSearchValueChange={onSearchValueChange} />
       <ThemeSwitcher />
     </nav>
   );

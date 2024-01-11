@@ -1,10 +1,10 @@
 import React from "react";
-import { locationIcon } from "../../public/icons/location.svg";
+import { ReactComponent as LocationIcon } from "../../public/icons/location.svg";
 
 const Location = () => {
   return (
     <div className="location">
-      {locationIcon}
+      <LocationIcon />
       <h4 className="location-text">
         <span className="bold">Stockholm</span>, Sweden
       </h4>
