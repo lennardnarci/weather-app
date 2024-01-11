@@ -252,6 +252,18 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+  .nav-bar {
+    flex-direction: column;
+  }
+
+  .location {
+    margin-bottom: -30px;
+  }
+
+  .theme-switcher {
+    display: none;
+  }
+
   .weather-results {
     margin-top: 100px;
     flex-direction: column;

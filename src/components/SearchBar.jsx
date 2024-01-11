@@ -14,6 +14,10 @@ const SearchBar = ({ onSearchValueChange }) => {
     }
   };
 
+  const handleClick = () => {
+    onSearchValueChange(searchValue);
+  };
+
   return (
     <div className="search">
       <input
@@ -23,8 +27,9 @@ const SearchBar = ({ onSearchValueChange }) => {
         value={searchValue}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
+        onClick={() => setSearchValue("")}
       />
-      <button className="search-button">
+      <button className="search-button" onClick={handleClick}>
         <img src="../../public/icons/arrow.svg" alt="Search Button" />
       </button>
     </div>
