@@ -255,10 +255,12 @@ body {
 .open .card-top {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   background: #b3b3db;
+  box-shadow: 0px 0px 100px 20px rgba(117, 16, 98, 0.5);
 }
 
 .open .card-body {
   background: #c3c3e6;
+  box-shadow: 0px 70px 100px 10px rgba(117, 16, 98, 0.5);
 }
 
 .card-details {
