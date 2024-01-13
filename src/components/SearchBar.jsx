@@ -30,7 +30,7 @@ const SearchBar = ({ onSearchValueChange }) => {
         onClick={() => setSearchValue("")}
       />
       <button className="search-button" onClick={handleClick}>
-        <img src="../../public/icons/arrow.svg" alt="Search Button" />
+        <img src="./arrow.svg" alt="Search Button" />
       </button>
     </div>
   );
