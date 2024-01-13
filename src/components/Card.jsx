@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ index, isOpen, title, weatherData, onOpen }) => {
+const Card = ({ index, isOpen, title, month, weatherData, onOpen }) => {
   return (
     <div
       className={`card ${isOpen ? "open" : ""}`}
@@ -16,8 +16,8 @@ const Card = ({ index, isOpen, title, weatherData, onOpen }) => {
             <h3 className="card-date">
               {isOpen
                 ? weatherData.forecast.forecastday[index].date.slice(8, 10) +
-                  "/" +
-                  weatherData.forecast.forecastday[index].date.slice(5, 7)
+                  " " +
+                  month
                 : ""}
             </h3>
           </div>
@@ -43,6 +43,10 @@ const Card = ({ index, isOpen, title, weatherData, onOpen }) => {
                 weatherData.forecast.forecastday[index].day.mintemp_c
               )}
               °
+            </h3>
+            <h3 className="card-details">
+              Feels Like:{" "}
+              {weatherData.forecast.forecastday[index].hour[11].feelslike_c}
             </h3>
           </div>
         </>

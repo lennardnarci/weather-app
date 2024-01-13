@@ -12,6 +12,20 @@ const days = [
   "Friday",
   "Saturday",
 ];
+var months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 
 const WeatherResults = ({ searchValue }) => {
   const getDayByIndex = (index) => {
@@ -40,6 +54,7 @@ const WeatherResults = ({ searchValue }) => {
     };
 
     fetchWeatherData();
+    setOpenIndex(0);
   }, [searchValue]);
 
   const [openIndex, setOpenIndex] = useState(0);
@@ -51,6 +66,7 @@ const WeatherResults = ({ searchValue }) => {
         isOpen={openIndex === 0}
         searchValue={searchValue}
         title={getDayByIndex(0)}
+        month={months[now.getMonth()].slice(0, 3)}
         weatherData={weatherData}
         onOpen={() => setOpenIndex(0)}
       />
@@ -59,6 +75,7 @@ const WeatherResults = ({ searchValue }) => {
         isOpen={openIndex === 1}
         searchValue={searchValue}
         title={getDayByIndex(1)}
+        month={months[now.getMonth()].slice(0, 3)}
         weatherData={weatherData}
         onOpen={() => setOpenIndex(1)}
       />
@@ -67,6 +84,7 @@ const WeatherResults = ({ searchValue }) => {
         isOpen={openIndex === 2}
         searchValue={searchValue}
         title={getDayByIndex(2)}
+        month={months[now.getMonth()].slice(0, 3)}
         weatherData={weatherData}
         onOpen={() => setOpenIndex(2)}
       />
@@ -75,6 +93,7 @@ const WeatherResults = ({ searchValue }) => {
         isOpen={openIndex === 3}
         searchValue={searchValue}
         title={getDayByIndex(3)}
+        month={months[now.getMonth()].slice(0, 3)}
         weatherData={weatherData}
         onOpen={() => setOpenIndex(3)}
       />
@@ -83,6 +102,7 @@ const WeatherResults = ({ searchValue }) => {
         isOpen={openIndex === 4}
         searchValue={searchValue}
         title={getDayByIndex(4)}
+        month={months[now.getMonth()].slice(0, 3)}
         weatherData={weatherData}
         onOpen={() => setOpenIndex(4)}
       />
@@ -91,6 +111,7 @@ const WeatherResults = ({ searchValue }) => {
         isOpen={openIndex === 5}
         searchValue={searchValue}
         title={getDayByIndex(5)}
+        month={months[now.getMonth()].slice(0, 3)}
         weatherData={weatherData}
         onOpen={() => setOpenIndex(5)}
       />
@@ -99,6 +120,7 @@ const WeatherResults = ({ searchValue }) => {
         isOpen={openIndex === 6}
         searchValue={searchValue}
         title={getDayByIndex(6)}
+        month={months[now.getMonth()].slice(0, 3)}
         weatherData={weatherData}
         onOpen={() => setOpenIndex(6)}
       />
