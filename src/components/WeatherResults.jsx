@@ -63,77 +63,26 @@ const WeatherResults = ({ searchValue }) => {
 
   const [openIndex, setOpenIndex] = useState(0);
 
-  return (
-    <div className="weather-results">
-      {weatherData && (
-        <>
-          <Card
-            index="0"
-            isOpen={openIndex === 0}
-            searchValue={searchValue}
-            title={getDayByIndex(0)}
-            month={months[now.getMonth()].slice(0, 3)}
-            weatherData={weatherData}
-            onOpen={() => setOpenIndex(0)}
-          />
-          <Card
-            index="1"
-            isOpen={openIndex === 1}
-            searchValue={searchValue}
-            title={getDayByIndex(1)}
-            month={months[now.getMonth()].slice(0, 3)}
-            weatherData={weatherData}
-            onOpen={() => setOpenIndex(1)}
-          />
-          <Card
-            index="2"
-            isOpen={openIndex === 2}
-            searchValue={searchValue}
-            title={getDayByIndex(2)}
-            month={months[now.getMonth()].slice(0, 3)}
-            weatherData={weatherData}
-            onOpen={() => setOpenIndex(2)}
-          />
-          <Card
-            index="3"
-            isOpen={openIndex === 3}
-            searchValue={searchValue}
-            title={getDayByIndex(3)}
-            month={months[now.getMonth()].slice(0, 3)}
-            weatherData={weatherData}
-            onOpen={() => setOpenIndex(3)}
-          />
-          <Card
-            index="4"
-            isOpen={openIndex === 4}
-            searchValue={searchValue}
-            title={getDayByIndex(4)}
-            month={months[now.getMonth()].slice(0, 3)}
-            weatherData={weatherData}
-            onOpen={() => setOpenIndex(4)}
-          />
-          <Card
-            index="5"
-            isOpen={openIndex === 5}
-            searchValue={searchValue}
-            title={getDayByIndex(5)}
-            month={months[now.getMonth()].slice(0, 3)}
-            weatherData={weatherData}
-            onOpen={() => setOpenIndex(5)}
-          />
-          <Card
-            index="6"
-            isOpen={openIndex === 6}
-            searchValue={searchValue}
-            title={getDayByIndex(6)}
-            month={months[now.getMonth()].slice(0, 3)}
-            weatherData={weatherData}
-            onOpen={() => setOpenIndex(6)}
-          />
-        </>
-      )}
-    </div>
-  );
+  const cards = () => {
+    const cardComponents = [];
+    for (let i = 0; i < 7; i++) {
+      cardComponents.push(
+        <Card
+          index={i}
+          isOpen={openIndex === i}
+          searchValue={searchValue}
+          title={getDayByIndex(i)}
+          month={months[now.getMonth()].slice(0, 3)}
+          weatherData={weatherData}
+          onOpen={() => setOpenIndex(i)}
+          key={i}
+        />
+      );
+    }
+    return cardComponents;
+  };
+
+  return <div className="weather-results">{weatherData && <>{cards()}</>}</div>;
 };
 
 export default WeatherResults;
