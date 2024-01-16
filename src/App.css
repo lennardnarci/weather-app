@@ -377,6 +377,10 @@ body {
   width: 300px;
 }
 
+button.active {
+  background-color: #4c4c4c;
+}
+
 @media only screen and (max-width: 768px) {
   .nav-bar {
     flex-direction: column;
@@ -391,11 +395,17 @@ body {
   }
 
   .weather-results {
-    margin-top: 150px;
+    margin-top: 175px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 300px;
+  }
+
+  .time-selector {
+    position: fixed;
+    left: 30%;
+    top: 150px;
   }
 
   .card {

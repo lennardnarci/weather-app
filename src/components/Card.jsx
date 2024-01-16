@@ -37,7 +37,9 @@ const Card = ({ index, isOpen, show, title, month, weatherData, onOpen }) => {
                   month
                 : ""}
             </h3>
-            <p className="card-top-time">15:00</p>
+            <p className="card-top-time">
+              {weatherData.current.last_updated.slice(11, 18)}
+            </p>
           </div>
           <div className="card-body">
             <img
