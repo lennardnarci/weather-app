@@ -117,6 +117,13 @@ body {
   opacity: 0;
 }
 
+.time-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .weather-results {
   display: flex;
   flex-direction: row;
@@ -138,7 +145,8 @@ body {
   line-height: normal;
   cursor: pointer;
 
-  transition: width 500ms ease, height 500ms ease;
+  transition: width 500ms ease, height 500ms ease, opacity 500ms ease,
+    visibility 500ms ease, margin 500ms ease;
 }
 
 .card-top {
@@ -163,7 +171,7 @@ body {
 .card:hover .card-top {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0px 0px 100px 20px rgba(117, 16, 98, 0.5);
+  box-shadow: 0px 0px 100px 20px rgba(117, 16, 98, 0.6);
 }
 
 .card-top-text {
@@ -221,6 +229,32 @@ body {
   transform: translateY(0);
 }
 
+.card-top-time {
+  display: flex;
+  width: 90px;
+  height: 30px;
+  flex-direction: column;
+
+  color: #000;
+  text-align: right;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+
+  width: 0px;
+  opacity: 0;
+  transform: translateX(5px);
+  transition: width 500ms ease, opacity 500ms ease, transform 500ms ease 200ms;
+}
+
+.expanded .card-top-time {
+  width: 80px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .card-body {
   position: relative;
   display: flex;
@@ -243,7 +277,7 @@ body {
 .card:hover .card-body {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-top: none;
-  box-shadow: 0px 70px 100px 10px rgba(117, 16, 98, 0.5);
+  box-shadow: 0px 70px 100px 10px rgba(117, 16, 98, 0.6);
 }
 
 .card-img {
@@ -289,12 +323,12 @@ body {
 .open .card-top {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   background: #b3b3db;
-  box-shadow: 0px 0px 100px 20px rgba(117, 16, 98, 0.5);
+  box-shadow: 0px 0px 100px 20px rgba(117, 16, 98, 0.6);
 }
 
 .open .card-body {
   background: #c3c3e6;
-  box-shadow: 0px 70px 100px 10px rgba(117, 16, 98, 0.5);
+  box-shadow: 0px 70px 100px 10px rgba(117, 16, 98, 0.6);
 }
 
 .card-details {
@@ -330,6 +364,17 @@ body {
   font-size: 12pt;
   width: 200px;
   color: rgba(0, 0, 0, 0.7);
+}
+
+.hidden {
+  opacity: 0;
+  width: 0;
+  visibility: hidden;
+  margin: 0;
+}
+
+.card.expanded {
+  width: 300px;
 }
 
 @media only screen and (max-width: 768px) {

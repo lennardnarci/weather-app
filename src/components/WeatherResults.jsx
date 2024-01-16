@@ -62,6 +62,7 @@ const WeatherResults = ({ searchValue }) => {
   }, [searchValue]);
 
   const [openIndex, setOpenIndex] = useState(0);
+  const [timeIndex, setTimeIndex] = useState(0);
 
   const cards = () => {
     const cardComponents = [];
@@ -70,6 +71,7 @@ const WeatherResults = ({ searchValue }) => {
         <Card
           index={i}
           isOpen={openIndex === i}
+          show={timeIndex === 1}
           searchValue={searchValue}
           title={getDayByIndex(i)}
           month={months[now.getMonth()].slice(0, 3)}
@@ -82,7 +84,28 @@ const WeatherResults = ({ searchValue }) => {
     return cardComponents;
   };
 
-  return <div className="weather-results">{weatherData && <>{cards()}</>}</div>;
+  return (
+    <>
+      <div className="time-selector">
+        <button
+          className={`today-button ${timeIndex === 0 ? "active" : ""}`}
+          onClick={() => {
+            setOpenIndex(0);
+            setTimeIndex(0);
+          }}
+        >
+          Today
+        </button>
+        <button
+          className={`week-button ${timeIndex === 1 ? "active" : ""}`}
+          onClick={() => setTimeIndex(1)}
+        >
+          7 Days
+        </button>
+      </div>
+      <div className="weather-results">{weatherData && <>{cards()}</>}</div>
+    </>
+  );
 };
 
 export default WeatherResults;

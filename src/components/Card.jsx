@@ -1,8 +1,8 @@
 import React from "react";
 
-const Card = ({ index, isOpen, title, month, weatherData, onOpen }) => {
+const Card = ({ index, isOpen, show, title, month, weatherData, onOpen }) => {
   function getTitle() {
-    if (isOpen && index === "0") {
+    if (isOpen && index === 0) {
       return "Today";
     } else if (isOpen) {
       return title;
@@ -13,7 +13,11 @@ const Card = ({ index, isOpen, title, month, weatherData, onOpen }) => {
 
   return (
     <div
-      className={`card ${isOpen ? "open" : ""}`}
+      className={`card ${isOpen ? "open" : ""} ${
+        show || index === 0 ? "" : "hidden"
+      } ${index === 0 ? "first-card" : ""} ${
+        index === 0 && !show ? "expanded" : ""
+      }`}
       key={index}
       onClick={onOpen}
     >
@@ -33,6 +37,7 @@ const Card = ({ index, isOpen, title, month, weatherData, onOpen }) => {
                   month
                 : ""}
             </h3>
+            <p className="card-top-time">15:00</p>
           </div>
           <div className="card-body">
             <img
