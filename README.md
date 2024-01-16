@@ -5,7 +5,7 @@ Enkel väderapplikation skriven i React för att visa veckans väderprognos.
 ## Funktioner
 
 - **Veckans väder**: Visa en översikt över vädret för varje dag i veckan.
-- **Detaljerad vy**: Klicka på varje dag för att se detaljerad information om temperaturen, luftfuktigheten och vindförhållandena.
+- **Detaljerad vy**: Klicka på varje dag för att se detaljerad information om vädret.
 - **Sökplats**: Användare kan söka efter olika platser för att se deras väderprognos.
 
 ## Installation
