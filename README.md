@@ -9,7 +9,7 @@ Enkel väderapplikation skriven i React för att visa veckans väderprognos.
 - **Sökplats**: Användare kan söka efter olika platser för att se deras väderprognos.
 
 ## Installation
-1. Klona detta repository till din lokal maskin:
+1. Klona detta repository till din lokala maskin:
 
    ```bash
    git clone https://github.com/lennardnarci/weather-app.git
