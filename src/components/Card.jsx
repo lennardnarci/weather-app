@@ -1,6 +1,16 @@
 import React from "react";
 
 const Card = ({ index, isOpen, title, month, weatherData, onOpen }) => {
+  function getTitle() {
+    if (isOpen && index === "0") {
+      return "Today";
+    } else if (isOpen) {
+      return title;
+    } else {
+      return title.slice(0, 3);
+    }
+  }
+
   return (
     <div
       className={`card ${isOpen ? "open" : ""}`}
@@ -10,9 +20,12 @@ const Card = ({ index, isOpen, title, month, weatherData, onOpen }) => {
       {weatherData && (
         <>
           <div className="card-top">
-            <h2 className="card-top-text">
-              {isOpen ? title : title.slice(0, 3)}
-            </h2>
+            <h2 className="card-top-text">{getTitle()}</h2>
+            <p className="card-top-date">
+              {weatherData.forecast.forecastday[index].date.slice(8, 10) +
+                "/" +
+                weatherData.forecast.forecastday[index].date.slice(5, 7)}
+            </p>
             <h3 className="card-date">
               {isOpen
                 ? weatherData.forecast.forecastday[index].date.slice(8, 10) +
@@ -27,6 +40,9 @@ const Card = ({ index, isOpen, title, month, weatherData, onOpen }) => {
               alt="weather image"
               className="card-img"
             />
+            <p className="card-condition card-details">
+              {weatherData.forecast.forecastday[index].day.condition.text}
+            </p>
             <h1 className="card-temp">
               {Math.round(
                 weatherData.forecast.forecastday[index].day.avgtemp_c

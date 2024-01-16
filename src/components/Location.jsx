@@ -6,7 +6,9 @@ const Location = ({ searchValue }) => {
       <img src="./icons/location.svg" alt="Location Icon" />
       <h4 className="location-text">
         <span className="bold">
-          {searchValue.charAt(0).toUpperCase() + searchValue.slice(1)}
+          {searchValue
+            ? searchValue.charAt(0).toUpperCase() + searchValue.slice(1)
+            : "Undefined"}
         </span>
       </h4>
     </div>
