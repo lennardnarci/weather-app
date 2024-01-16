@@ -28,5 +28,5 @@ Enkel väderapplikation skriven i React för att visa veckans väderprognos.
 Sidan finns för användning på github pages. https://lennardnarci.github.io/weather-app/
 
 ## Teknologier
-React: Används för att bygga användargränssnittet och hantera tillståndet.
-Weather API: Används för att hämta väderdata baserat på användarens sökning.
+- React: Används för att bygga användargränssnittet och hantera tillståndet.
+- Weather API: Används för att hämta väderdata baserat på användarens sökning.
