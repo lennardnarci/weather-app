@@ -12,7 +12,7 @@ Enkel väderapplikation skriven i React för att visa veckans väderprognos.
 1. Klona detta repository till din lokal maskin:
 
    ```bash
-   git clone https://github.com/din-anvandarnamn/weather-app.git
+   git clone https://github.com/lennardnarci/weather-app.git
    ```
 2. Navigera till projektmappen:
 
