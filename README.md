@@ -1,8 +1,32 @@
-# React + Vite
+# Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Enkel väderapplikation skriven i React för att visa veckans väderprognos.
 
-Currently, two official plugins are available:
+## Funktioner
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Veckans väder**: Visa en översikt över vädret för varje dag i veckan.
+- **Detaljerad vy**: Klicka på varje dag för att se detaljerad information om vädret.
+- **Sökplats**: Användare kan söka efter olika platser för att se deras väderprognos.
+
+## Installation
+1. Klona detta repository till din lokala maskin:
+
+   ```bash
+   git clone https://github.com/lennardnarci/weather-app.git
+   ```
+2. Navigera till projektmappen:
+
+   ```bash
+   cd weather-app
+   ```
+3. Installera alla beroenden:
+   ```bash
+   npm install
+   ```
+
+## Användning
+Sidan finns för användning på github pages. https://lennardnarci.github.io/weather-app/
+
+## Teknologier
+- React: Används för att bygga användargränssnittet och hantera tillståndet.
+- Weather API: Används för att hämta väderdata baserat på användarens sökning.
