@@ -38,7 +38,7 @@ const Card = ({ index, isOpen, show, title, month, weatherData, onOpen }) => {
                 : ""}
             </h3>
             <p className="card-top-time">
-              {weatherData.current.last_updated.slice(11, 18)}
+              {weatherData.location.localtime.slice(11, 18)}
             </p>
           </div>
           <div className="card-body">
