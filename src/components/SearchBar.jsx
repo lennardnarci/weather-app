@@ -1,21 +1,17 @@
 import React from "react";
-import { useState } from "react";
+import { useRef } from "react";
 
 const SearchBar = ({ onSearchValueChange }) => {
-  const [searchValue, setSearchValue] = useState("Stockholm");
-
-  const handleInputChange = (e) => {
-    setSearchValue(e.target.value);
-  };
+  const searchValue = useRef();
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      onSearchValueChange(searchValue);
+      onSearchValueChange(searchValue.current.value);
     }
   };
 
   const handleClick = () => {
-    onSearchValueChange(searchValue);
+    onSearchValueChange(searchValue.current.value);
   };
 
   return (
@@ -24,10 +20,9 @@ const SearchBar = ({ onSearchValueChange }) => {
         className="search-bar"
         type="text"
         placeholder="Search for city..."
-        value={searchValue}
-        onChange={handleInputChange}
+        ref={searchValue}
         onKeyDown={handleKeyDown}
-        onClick={() => setSearchValue("")}
+        onClick={() => (searchValue.current.value = "")}
       />
       <button className="search-button" onClick={handleClick}>
         <img
