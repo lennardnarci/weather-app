@@ -66,7 +66,11 @@ const WeatherResults = ({ searchValue }) => {
 
   const cards = () => {
     const cardComponents = [];
-    for (let i = 0; i < 7; i++) {
+    for (
+      let i = 0;
+      i < Math.min(weatherData.forecast.forecastday.length, 7);
+      i++
+    ) {
       cardComponents.push(
         <Card
           index={i}
